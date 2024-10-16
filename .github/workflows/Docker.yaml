@@ -1,9 +1,9 @@
 name: Docker
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   push_docker:
@@ -37,7 +37,7 @@ jobs:
       
       - name: ZYUMON TIME
         run:
-          docker buildx build --platform linux/arm64/v8,linux/amd64 -t ghcr.io/TakanoTaiga/scenario_simulator_v2:humble --build-arg ROS_DISTRO=humble --push .
+          docker buildx build --platform linux/arm64/v8,linux/amd64 -t ghcr.io/moriyalab/scenario_simulator_v2:humble --build-arg ROS_DISTRO=humble --push .
           
       # - name: ZYUMON TIME
       #   run:
